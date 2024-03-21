@@ -1,0 +1,12 @@
+go 1.21.6
+
+use (
+	./build/tools
+	./contracts
+	./cosmos
+	./e2e/localnet
+	./e2e/precompile
+	./e2e/testapp
+	./eth
+	./lib
+)
