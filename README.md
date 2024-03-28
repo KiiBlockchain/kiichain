@@ -72,6 +72,8 @@ If you do not have the patience for this, the second method to syncing your node
       --gas=auto --gas-adjustment=1.2 \
       --gas-prices=10.0tkii \
       --from <the name of your validator wallet, KEYS[0] in entrypoint.sh configuration>
+
+   # Pro tip: if you do not want to keep including the full path to kiichaind, consider creating a symlink for it
    ```
 
 ## 🚧 WARNING: UNDER CONSTRUCTION 🚧
