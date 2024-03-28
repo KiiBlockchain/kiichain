@@ -4,9 +4,9 @@ use (
 	./build/tools
 	./contracts
 	./cosmos
+	./e2e/app
 	./e2e/localnet
 	./e2e/precompile
-	./e2e/testapp
 	./eth
 	./lib
 )

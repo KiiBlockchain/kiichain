@@ -20,8 +20,8 @@ build-linux-arm64:
 	GOOS=linux GOARCH=arm64 LEDGER_ENABLED=false $(MAKE) build
 
 $(BUILD_TARGETS): forge-build sync $(OUT_DIR)/
-	@echo "Building ${TESTAPP_DIR}"
-	@cd ${CURRENT_DIR}/$(TESTAPP_DIR) && go $@ -mod=readonly $(BUILD_FLAGS) $(BUILD_ARGS) ./...
+	@echo "Building ${APP_DIR}"
+	@cd ${CURRENT_DIR}/$(APP_DIR) && go $@ -mod=readonly $(BUILD_FLAGS) $(BUILD_ARGS) ./...
 
 $(OUT_DIR)/:
 	mkdir -p $(OUT_DIR)/
@@ -71,7 +71,7 @@ IMAGE_VERSION ?= v0.0.0
 BASE_IMAGE ?= kiichaind/base:$(IMAGE_VERSION)
 
 # Docker Paths
-BASE_DOCKER_PATH = ./e2e/testapp/docker
+BASE_DOCKER_PATH = ./e2e/app/docker
 EXEC_DOCKER_PATH = $(BASE_DOCKER_PATH)/base.Dockerfile
 LOCAL_DOCKER_PATH = $(BASE_DOCKER_PATH)/local/Dockerfile
 SEED_DOCKER_PATH =  $(BASE_DOCKER_PATH)/seed/Dockerfile
@@ -155,7 +155,7 @@ mockery:
 #################
 
 start:
-	@./e2e/testapp/entrypoint.sh
+	@./e2e/app/entrypoint.sh
 
 #################
 #     unit      #

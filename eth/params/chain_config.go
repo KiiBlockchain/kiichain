@@ -27,7 +27,7 @@ import (
 )
 
 const (
-	artioChainID = 80085
+	artioChainID = 123454321
 )
 
 var (
