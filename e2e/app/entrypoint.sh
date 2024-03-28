@@ -23,7 +23,12 @@
 # START CONFIGURATION
 ############################################################################
 
-# Genesis Accounts
+###################
+# ACCOUNT KEYS
+# Wallets that are initialized on node setup.
+# if you're joining testnet or mainnet, you only need to set up 1 (your validator).
+# for local development, these wallets are included in the genesis file.
+###################
 KEYS[0]="private_sale"
 # KEYS[1]="public_sale"
 # KEYS[2]="liquidity"
@@ -35,8 +40,11 @@ KEYS[0]="private_sale"
 # KEYS[8]="kiiuruswallet"
 # KEYS[9]="kiipaganiwallet"
 
-# Initial balances corresponding to the genesis accounts
-# MUST BE THE SAME NUMBER OF GENESIS ACCOUNTS
+###################
+# INITIAL BALANCES
+# Balances that are initialized to the corresponding keys above (KEYS[0] will have a balance of INITIAL_BALANCES[0]).
+# Note: this does not matter if you're joining testnet or mainnet
+###################
 INITIAL_BALANCES[0]=100000000000000000000000000
 # INITIAL_BALANCES[1]=100000000000000000000000000
 # INITIAL_BALANCES[2]=100000000000000000000000000
@@ -48,9 +56,11 @@ INITIAL_BALANCES[0]=100000000000000000000000000
 # INITIAL_BALANCES[8]=100000000000000000000000000
 # INITIAL_BALANCES[9]=100000000000000000000000000
 
-# Seed Phrase for corresponding keys
-# MUST BE THE SAME NUMBER OF KEYS
-# Skip this if you want to create new wallets
+###################
+# SEED PHRASES
+# Seed phrases that are used to initialize a specific wallet.  Skip this configuration if creating completely new wallets.
+# Phrases will correspond to keys (KEYS[0] will be derrived from phrase PHRASE[0]).
+###################
 # PHRASE[0]=""
 # PHRASE[1]=""
 # PHRASE[2]=""
@@ -62,27 +72,45 @@ INITIAL_BALANCES[0]=100000000000000000000000000
 # PHRASE[8]=""
 # PHRASE[9]=""
 
-INITIAL_EVM_ACCOUNT[0]=cb9935EcfFC56c38d9ed739069fB2512A90eb6C4
 
+###################
+# EVM
+# Configuration settings for evm module.  Skip this when joining testnet or mainnet.
+# initial evm address without the "0x" prefix
+# initial evm wallet balance in wei (10**18)
+###################
+INITIAL_EVM_ACCOUNT=cb9935EcfFC56c38d9ed739069fB2512A90eb6C4
+INITIAL_EVM_ACCOUNT_BALANCE=1800000000000000000000000000
+
+###################
+# CHAIN INFO
+# For local chain development.  Skip this step when joining testnet or mainnet.
+###################
 CHAINID="kiichain-1"
 MONIKER="kiiventador"
-# Remember to change to other types of keyring like 'file' in-case exposing to outside world,
-# otherwise your balance will be wiped quickly
-# The keyring test does not require private key to steal tokens from you
 KEYRING="test"
 KEYALGO="eth_secp256k1"
 LOGLEVEL="info"
-# Set dedicated home directory for the ./build/bin/kiichaind instance
-HOMEDIR="./.tmp/kiichaind"
-# to trace evm
+# to trace evm.  Blank string to disable the trace.
 TRACE="--trace"
-# TRACE=""
 
-# Path variables
+###################
+# VALIDATOR SEED PEERS
+# seed validators to join a network
+# format comma separated: <node id 1>@<ip address>:26656,<node id 2>@<ip address>:26656
+###################
+PEER_ADDRESSES=""
+
+###################
+# FILE PATHS
+# different variables containing directory and file paths
+###################
+HOMEDIR="./.tmp/kiichaind"
 CONFIG_TOML=$HOMEDIR/config/config.toml
 APP_TOML=$HOMEDIR/config/app.toml
 GENESIS=$HOMEDIR/config/genesis.json
 TMP_GENESIS=$HOMEDIR/config/tmp_genesis.json
+
 
 ############################################################################
 # END CONFIGURATION
@@ -153,20 +181,11 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 		((KEY_BALANCE_INDEX++))
 	done
 
-	for INITIAL_EVM_ACCOUNT in "${INITIAL_EVM_ACCOUNT[@]}"; do
-		dec=1800000000000000000000000000
-		HEX_BALANCE=$(bc <<< "obase=16;$dec")
-		jq '.app_state["evm"]["alloc"]["cb9935EcfFC56c38d9ed739069fB2512A90eb6C4"]["balance"]='\"0x$HEX_BALANCE\" "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
-	done
+	HEX_BALANCE=$(bc <<< "obase=16;$INITIAL_EVM_ACCOUNT_BALANCE")
+	jq '.app_state["evm"]["alloc"]['\""$INITIAL_EVM_ACCOUNT"\"']["balance"]='\"0x$HEX_BALANCE\" "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 
 	# Sign genesis transaction
 	./build/bin/kiichaind genesis gentx ${KEYS[0]} 1000000000000000000000tkii --keyring-backend $KEYRING --chain-id $CHAINID --home "$HOMEDIR"
-	## In case you want to create multiple validators at genesis
-	## 1. Back to `./build/bin/kiichaind keys add` step, init more keys
-	## 2. Back to `./build/bin/kiichaind add-genesis-account` step, add balance for those
-	## 3. Clone this ~/../build/bin/kiichaind home directory into some others, let's say `~/.cloned./build/bin/kiichaind`
-	## 4. Run `gentx` in each of those folders
-	## 5. Copy the `gentx-*` folders under `~/.cloned./build/bin/kiichaind/config/gentx/` folders into the original `~/../build/bin/kiichaind/config/gentx`
 
 	# Collect genesis tx
 	./build/bin/kiichaind genesis collect-gentxs --home "$HOMEDIR"
@@ -178,6 +197,9 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 		echo "pending mode is on, please wait for the first block committed."
 	fi
 fi
+
+# add persistent peers
+sed -i'' -e "s/^persistent_peers = .*/persistent_peers = \"$PEER_ADDRESSES\"/" "$CONFIG_TOML"
 
 # Start the node (remove the --pruning=nothing flag if historical queries are not needed)m
 ./build/bin/kiichaind start --pruning=nothing "$TRACE" --log_level $LOGLEVEL --api.enabled-unsafe-cors --api.enable --api.swagger --minimum-gas-prices=0.0001tkii --home "$HOMEDIR"

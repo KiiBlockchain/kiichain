@@ -27,6 +27,11 @@ The instructions below are meant as a starter guideline.  They are not meant to 
    git clone https://github.com/KiiBlockchain/kiichain.git
    cd kiichain
    make build-clean
+
+   # the first time you start the node, it's a good idea to stream the output into a file (like logs.txt in this case).  You will need to find the seed phrase of your validator account in this log file.  You can find this easily by searching the output: **Important**
+   make start > logs.txt
+
+   # if you already have your seed, simply run:
    make start
    ```
 
