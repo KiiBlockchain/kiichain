@@ -138,7 +138,7 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	rm -rf "$HOMEDIR"
 
 	# # Set moniker and chain-id (Moniker can be anything, chain-id must be an integer)
-	./build/bin/kiichaind init $MONIKER -o --chain-id $CHAINID --home "$HOMEDIR"
+	./build/bin/kiichaind init \"$MONIKER\" -o --chain-id $CHAINID --home "$HOMEDIR"
 
 	# Set client config
 	./build/bin/kiichaind config set client keyring-backend $KEYRING --home "$HOMEDIR"
