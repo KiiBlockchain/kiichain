@@ -22,6 +22,10 @@ The instructions below are meant as a starter guideline.  They are not meant to 
    ```sh
    git clone https://github.com/KiiBlockchain/kiichain.git
    cd kiichain
+
+   # install foundry
+   curl -L https://foundry.paradigm.xyz | bash
+
    make build-clean
    nano e2e/app/entrypoint.sh
 
