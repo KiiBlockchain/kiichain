@@ -87,7 +87,7 @@ INITIAL_EVM_ACCOUNT_BALANCE=1800000000000000000000000000
 # For local chain development.  Skip this step when joining testnet or mainnet.
 ###################
 CHAINID="kiichain-1"
-MONIKER="kiiventador"
+MONIKER="Kiichain Validator 1"
 KEYRING="test"
 KEYALGO="eth_secp256k1"
 LOGLEVEL="info"
@@ -138,7 +138,7 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	rm -rf "$HOMEDIR"
 
 	# # Set moniker and chain-id (Moniker can be anything, chain-id must be an integer)
-	./build/bin/kiichaind init \"$MONIKER\" -o --chain-id $CHAINID --home "$HOMEDIR"
+	./build/bin/kiichaind init "$MONIKER" -o --chain-id $CHAINID --home "$HOMEDIR"
 
 	# Set client config
 	./build/bin/kiichaind config set client keyring-backend $KEYRING --home "$HOMEDIR"
@@ -185,7 +185,7 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	jq '.app_state["evm"]["alloc"]['\""$INITIAL_EVM_ACCOUNT"\"']["balance"]='\"0x$HEX_BALANCE\" "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 
 	# Sign genesis transaction
-	./build/bin/kiichaind genesis gentx ${KEYS[0]} 1000000000000000000000tkii --keyring-backend $KEYRING --chain-id $CHAINID --home "$HOMEDIR"
+	./build/bin/kiichaind genesis gentx ${KEYS[0]} ${INITIAL_BALANCES[0]}tkii --keyring-backend $KEYRING --chain-id $CHAINID --home "$HOMEDIR"
 
 	# Collect genesis tx
 	./build/bin/kiichaind genesis collect-gentxs --home "$HOMEDIR"
