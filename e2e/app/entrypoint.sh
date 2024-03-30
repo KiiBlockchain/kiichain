@@ -105,7 +105,7 @@ PEER_ADDRESSES=""
 # FILE PATHS
 # different variables containing directory and file paths
 ###################
-HOMEDIR="./.tmp/kiichaind"
+HOMEDIR="~/.kiichaind"
 CONFIG_TOML=$HOMEDIR/config/config.toml
 APP_TOML=$HOMEDIR/config/app.toml
 GENESIS=$HOMEDIR/config/genesis.json
