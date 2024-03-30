@@ -23,8 +23,14 @@ The instructions below are meant as a starter guideline.  They are not meant to 
    git clone https://github.com/KiiBlockchain/kiichain.git
    cd kiichain
 
-   # install foundry
+   # foundry installer
    curl -L https://foundry.paradigm.xyz | bash
+
+   # re-invoke shell or simply close and re-open your session
+   exec $SHELL
+
+   # install foundry
+   foundryup
 
    make build-clean
    nano e2e/app/entrypoint.sh
