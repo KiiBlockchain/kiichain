@@ -147,11 +147,11 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	# If keys exist they should be deleted
 	KEY_PHRASE_INDEX=0
 	for KEY in "${KEYS[@]}"; do
-		if [[ -z ${PHRASE[@]} ]]
+		if [[ -v ${PHRASE[@]} ]]
 		then
-			./build/bin/kiichaind keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO --home "$HOMEDIR"
-		else
 			echo "${PHRASE[KEY_PHRASE_INDEX]}" | ./build/bin/kiichaind keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO --home "$HOMEDIR" --recover
+		else
+			./build/bin/kiichaind keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO --home "$HOMEDIR"
 		fi
 		((KEY_PHRASE_INDEX++))
 	done
