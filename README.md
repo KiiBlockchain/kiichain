@@ -6,6 +6,7 @@
 ## Pre-requisite
 
 - Golang 1.20+
+- jq (sudo apt-get install jq)
 - 100 GB storage (minimum for testnet)
 - 4 GB RAM (minimum for testnet)
 - 1 Gbps network speed (minimum for testnet)
