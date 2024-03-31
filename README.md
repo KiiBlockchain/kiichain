@@ -55,7 +55,6 @@ The instructions below are meant as a starter guideline.  They are not meant to 
    # failed to execute message; message index: 0: invalid coin denomination: got tkii, expected stake: invalid request
    # this is because you need to replace the automatically generated genesis file with the genesis file in the repo:
 
-   # replace the genesis file with the command:
    # if home directory is set to .tmp/kiichaind
    cp genesis/genesis.json .tmp/kiichaind/config/genesis.json
 

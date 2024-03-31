@@ -200,5 +200,5 @@ fi
 # add persistent peers
 sed -i'' -e "s/^persistent_peers = .*/persistent_peers = \"$PEER_ADDRESSES\"/" "$CONFIG_TOML"
 
-# Start the node (remove the --pruning=nothing flag if historical queries are not needed)m
+# Start the node
 ./build/bin/kiichaind start --pruning=default "$TRACE" --log_level $LOGLEVEL --api.enabled-unsafe-cors --api.enable --api.swagger --minimum-gas-prices=1tkii --home "$HOMEDIR"
