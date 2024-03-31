@@ -51,13 +51,19 @@ The instructions below are meant as a starter guideline.  They are not meant to 
 
 ## Connecting to Testnet
    ```sh
-   # Once you've successfully started your node with make start, stop your node
+   # NOTE: When starting the node, you may run into the error:
+   # failed to execute message; message index: 0: invalid coin denomination: got tkii, expected stake: invalid request
+   # this is because you need to replace the automatically generated genesis file with the genesis file in the repo:
 
    # replace the genesis file with the command:
-   mv genesis/genesis.json .tmp/kiichaind/config/genesis.json
+   # if home directory is set to .tmp/kiichaind
+   cp genesis/genesis.json .tmp/kiichaind/config/genesis.json
 
-   # start your node again
-   make start
+   # reset any created blockchain state
+   ./build/bin/kiichaind comet unsafe-reset-all --home .tmp/kiichaind
+
+   # start your node via kiichaind
+   ./build/bin/kiichaind start --pruning=default --trace --log_level info --api.enabled-unsafe-cors --api.enable --api.swagger --minimum-gas-prices=1tkii --home .tmp/kiichaind
    ```
 
 ## Node Syncing
