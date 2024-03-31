@@ -147,13 +147,13 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	# If keys exist they should be deleted
 	KEY_PHRASE_INDEX=0
 	for KEY in "${KEYS[@]}"; do
-		if [[ -v ${PHRASE[@]} ]]
+		if [[ -z ${PHRASE[@]} ]]
 		then
-			echo "${PHRASE[KEY_PHRASE_INDEX]}" | ./build/bin/kiichaind keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO --home "$HOMEDIR" --recover
-		else
 			./build/bin/kiichaind keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO --home "$HOMEDIR"
+		else
+			echo "${PHRASE[KEY_PHRASE_INDEX]}" | ./build/bin/kiichaind keys add $KEY --keyring-backend $KEYRING --algo $KEYALGO --home "$HOMEDIR" --recover
 		fi
-		((KEY_PHRASE_INDEX++))
+		let KEY_PHRASE_INDEX=KEY_PHRASE_INDEX+1
 	done
 
 	# Change parameter token denominations to tkii
@@ -178,7 +178,7 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 		else
 			./build/bin/kiichaind genesis add-genesis-account $KEY ${INITIAL_BALANCES[KEY_BALANCE_INDEX]}tkii --keyring-backend $KEYRING --home "$HOMEDIR"
 		fi
-		((KEY_BALANCE_INDEX++))
+		let KEY_BALANCE_INDEX=KEY_BALANCE_INDEX+1
 	done
 
 	HEX_BALANCE=$(bc <<< "obase=16;$INITIAL_EVM_ACCOUNT_BALANCE")
