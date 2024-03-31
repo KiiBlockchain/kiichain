@@ -1,7 +1,7 @@
 {
   "app_name": "kiichaind",
-  "app_version": "616495e",
-  "genesis_time": "2024-03-31T22:23:55.182591428Z",
+  "app_version": "22336ba",
+  "genesis_time": "2024-03-31T23:41:23.306834544Z",
   "chain_id": "kiichain-1",
   "initial_height": 1,
   "app_hash": null,
@@ -17,70 +17,70 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii182h08c2j7xk8lhhqzaux7marjkzzu0zens9y5x",
+          "address": "kii1xaj5we4lzjplcug5ntge7zzwrv8x36xy6cr9p8",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii14939edurmqra0yr8haman0xsq6w7nmaq0tp5qs",
+          "address": "kii1va49esgtdfz77lj4jnk2vxtzllfmug64nhl25t",
           "pub_key": null,
           "account_number": "1",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii1h2t0flgj6cnj5j0w2evq6hmnq27jz4n7gu2u3x",
+          "address": "kii13rjgj5dlmj77fejatazq8j70wmelux84fm8aaz",
           "pub_key": null,
           "account_number": "2",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii15ayp0ek9uhgjmlfk2s5wpk2k0qepzs4zjvhxxn",
+          "address": "kii17cdwycu98d3vujz8mzclkvkdu8zxnkkxr0d5rq",
           "pub_key": null,
           "account_number": "3",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii16nltyp70wd0m9p0fh3240ccx5z84gaw7vr36dr",
+          "address": "kii1dnmpg3apzrd0t8x669hv7tgnr2yh3dyvtfdf08",
           "pub_key": null,
           "account_number": "4",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii1qd6a2psatf8s47ap34z3s7j2n2m59n0fcxetu5",
+          "address": "kii1jfawx8fqv49j7uy6mufdmqm3gj4ffr3672s7sr",
           "pub_key": null,
           "account_number": "5",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii1dpxg784wma07lkkhkkvjk9gay9dx4agxqu53nn",
+          "address": "kii1jc3atj5gafvsuma049ly4fajl7f8cxqvlv7klq",
           "pub_key": null,
           "account_number": "6",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii1n06ej4m9sfwpqzusd6snvj3630pq3d043rfc0x",
+          "address": "kii17vjktgdgaq7mfrzpzlke4pgrhu75pt4v9sgnpz",
           "pub_key": null,
           "account_number": "7",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii1krvkurj3nv4amh3q35u485dk33gyfa4klsyqug",
+          "address": "kii1cteltjslddqmnur26my5c0txjk97vg8ppj8mr4",
           "pub_key": null,
           "account_number": "8",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "kii19kgt06x9sm92x5wrmg60766qx0qsgu8frzgjtv",
+          "address": "kii1rjgt50xm8933fx73u0p8hl03pyrllcmgwttmc6",
           "pub_key": null,
           "account_number": "9",
           "sequence": "0"
@@ -94,16 +94,7 @@
       },
       "balances": [
         {
-          "address": "kii1qd6a2psatf8s47ap34z3s7j2n2m59n0fcxetu5",
-          "coins": [
-            {
-              "denom": "tkii",
-              "amount": "900000000000000"
-            }
-          ]
-        },
-        {
-          "address": "kii19kgt06x9sm92x5wrmg60766qx0qsgu8frzgjtv",
+          "address": "kii1rjgt50xm8933fx73u0p8hl03pyrllcmgwttmc6",
           "coins": [
             {
               "denom": "tkii",
@@ -112,7 +103,7 @@
           ]
         },
         {
-          "address": "kii182h08c2j7xk8lhhqzaux7marjkzzu0zens9y5x",
+          "address": "kii1xaj5we4lzjplcug5ntge7zzwrv8x36xy6cr9p8",
           "coins": [
             {
               "denom": "tkii",
@@ -121,34 +112,7 @@
           ]
         },
         {
-          "address": "kii1dpxg784wma07lkkhkkvjk9gay9dx4agxqu53nn",
-          "coins": [
-            {
-              "denom": "tkii",
-              "amount": "1000000000000"
-            }
-          ]
-        },
-        {
-          "address": "kii1n06ej4m9sfwpqzusd6snvj3630pq3d043rfc0x",
-          "coins": [
-            {
-              "denom": "tkii",
-              "amount": "1000000000000"
-            }
-          ]
-        },
-        {
-          "address": "kii15ayp0ek9uhgjmlfk2s5wpk2k0qepzs4zjvhxxn",
-          "coins": [
-            {
-              "denom": "tkii",
-              "amount": "180000000000000"
-            }
-          ]
-        },
-        {
-          "address": "kii14939edurmqra0yr8haman0xsq6w7nmaq0tp5qs",
+          "address": "kii1va49esgtdfz77lj4jnk2vxtzllfmug64nhl25t",
           "coins": [
             {
               "denom": "tkii",
@@ -157,16 +121,16 @@
           ]
         },
         {
-          "address": "kii1krvkurj3nv4amh3q35u485dk33gyfa4klsyqug",
+          "address": "kii1dnmpg3apzrd0t8x669hv7tgnr2yh3dyvtfdf08",
           "coins": [
             {
               "denom": "tkii",
-              "amount": "1000000000000"
+              "amount": "356000000000000"
             }
           ]
         },
         {
-          "address": "kii1h2t0flgj6cnj5j0w2evq6hmnq27jz4n7gu2u3x",
+          "address": "kii13rjgj5dlmj77fejatazq8j70wmelux84fm8aaz",
           "coins": [
             {
               "denom": "tkii",
@@ -175,11 +139,47 @@
           ]
         },
         {
-          "address": "kii16nltyp70wd0m9p0fh3240ccx5z84gaw7vr36dr",
+          "address": "kii1jfawx8fqv49j7uy6mufdmqm3gj4ffr3672s7sr",
           "coins": [
             {
               "denom": "tkii",
-              "amount": "356000000000000"
+              "amount": "900000000000000"
+            }
+          ]
+        },
+        {
+          "address": "kii1jc3atj5gafvsuma049ly4fajl7f8cxqvlv7klq",
+          "coins": [
+            {
+              "denom": "tkii",
+              "amount": "1000000000000"
+            }
+          ]
+        },
+        {
+          "address": "kii1cteltjslddqmnur26my5c0txjk97vg8ppj8mr4",
+          "coins": [
+            {
+              "denom": "tkii",
+              "amount": "1000000000000"
+            }
+          ]
+        },
+        {
+          "address": "kii17vjktgdgaq7mfrzpzlke4pgrhu75pt4v9sgnpz",
+          "coins": [
+            {
+              "denom": "tkii",
+              "amount": "1000000000000"
+            }
+          ]
+        },
+        {
+          "address": "kii17cdwycu98d3vujz8mzclkvkdu8zxnkkxr0d5rq",
+          "coins": [
+            {
+              "denom": "tkii",
+              "amount": "180000000000000"
             }
           ]
         }
@@ -272,10 +272,10 @@
                 },
                 "min_self_delegation": "1",
                 "delegator_address": "",
-                "validator_address": "kiivaloper1dpxg784wma07lkkhkkvjk9gay9dx4agx420zj8",
+                "validator_address": "kiivaloper1jc3atj5gafvsuma049ly4fajl7f8cxqv269975",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "q09pjCF4Ab/aE8ANXHdAZb4ZgE+S3izQUevpol1BJ8Q="
+                  "key": "sBctm9TQZM62Bl5dpMp3Gyg9l6bD4imnzSoxM5qsE3Q="
                 },
                 "value": {
                   "denom": "tkii",
@@ -283,7 +283,7 @@
                 }
               }
             ],
-            "memo": "425e2af2328d9f9ce264497cf833387ca8d89ce0@172.31.4.207:26656",
+            "memo": "9cd65ea4b3b10b5ef83aa0343a1cfe08ea284667@172.31.4.207:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -293,7 +293,7 @@
               {
                 "public_key": {
                   "@type": "/polaris.crypto.ethsecp256k1.v1.PubKey",
-                  "key": "Aqv/ncWxib/uFjsNI/kyhRrmfis8GZZm8t1DbyvHEzC0"
+                  "key": "A1Z1y1hzp3RJigUAvpuqvFv4sRi34Sso+4hz949mHs1N"
                 },
                 "mode_info": {
                   "single": {
@@ -312,7 +312,7 @@
             "tip": null
           },
           "signatures": [
-            "dAdnZ/8yrZIdJNOh9qikYda9kAufzVqoTbnMCQ8qkeYXDuUJSJcRxA1cOu9Hl0MN0tHRo2xhcEldoNlymNaXeAE="
+            "R12hlb7JgGRYoxND6D4vZDBEbESkbLZJhcjEfLJWnUYYzlMzkZVermxu26SKT2dIz7pSAjLqVbKh8XfjB/SqvAA="
           ]
         }
       ]
