@@ -70,24 +70,41 @@ There are two types of node syncing methods available.  Fast Sync and State Sync
 
 If you do not have the patience for this, the second method to syncing your node is state sync.  For a more information, please visit [State Sync in Tendermint's Documentation](https://docs.tendermint.com/v0.34/tendermint-core/state-sync.html).
 
+## Create Validator.json
+NOTE: to get pubkey, execute the command:
+```
+./build/bin/kiichaind comet show-validator --home .tmp/kiichaind
+```
+```json
+{
+        "pubkey": <YOUR PUBKEY>,
+        "amount": "10000000000tkii",
+        "moniker": "YOUR VALIDATOR NAME",
+        "identity": "YOUR KEYBASE IDENTITY",
+        "website": "YOUR VALIDATOR WEBSITE",
+        "security": "YOUR VALIDATOR EMAIL",
+        "details": "YOUR VALIDATOR DESCRIPTION",
+        "commission-rate": "0.1",
+        "commission-max-rate": "0.2",
+        "commission-max-change-rate": "0.01",
+        "min-self-delegation": "10000000000"
+}
+```
+
 ## Convert Node to Validator
    ```sh
    # ENSURE: 
    # 1) you have kii coins in your validator wallet
    # 2) your node is fully synced with the blockchain
    # 3) your golang environment is enabled
+   # 4) make sure you have your validator.json
 
    ./build/bin/kiichaind tx staking create-validator \
-      --amount=10000000000tkii \
-      --pubkey=$(./build/bin/kiichaind tendermint show-validator) \
-      --moniker=<name of your validator> \
-      --commission-rate=0.1 \ #this represents 10%
-      --commission-max-rate=0.2 \ #this represents 20%
-      --commission-max-change-rate=0.01 \
-      --min-self-delegation=1 \
-      --gas=auto --gas-adjustment=1.2 \
-      --gas-prices=10.0tkii \
-      --from <the name of your validator wallet, KEYS[0] in entrypoint.sh configuration>
+  validator.json \
+  --from <your validator wallet from entrypoint.sh> \
+  --keyring-backend test \
+  --chain-id kiichain-1 \
+  --home .tmp/kiichaind
 
    # Pro tip: if you do not want to keep including the full path to kiichaind, consider creating a symlink for it
    ```
