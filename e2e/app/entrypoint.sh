@@ -98,8 +98,9 @@ TRACE="--trace"
 # VALIDATOR SEED PEERS
 # seed validators to join a network
 # format comma separated: <node id 1>@<ip address>:26656,<node id 2>@<ip address>:26656
+# VALUES ARE CURRENTLY Kiichain's PUBLIC SENTRY NODES.  FEEL FREE TO NOT USE THEM IF YOU WOULD RATHER USE DIFFERENT PEERS.
 ###################
-PEER_ADDRESSES=""
+PEER_ADDRESSES="55e356acc8de09092128eceb2803958d6dc1e991@18.118.138.89:26656,2f97ccda517b870c46cb996880539c5d90d31130@3.141.193.41:26656"
 
 ###################
 # FILE PATHS
