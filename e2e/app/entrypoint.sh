@@ -30,15 +30,15 @@
 # for local development, these wallets are included in the genesis file.
 ###################
 KEYS[0]="private_sale"
-# KEYS[1]="public_sale"
-# KEYS[2]="liquidity"
-# KEYS[3]="community_development"
-# KEYS[4]="team"
-# KEYS[5]="rewards"
-# KEYS[6]="kiiventadorwallet"
-# KEYS[7]="kiiferrari458wallet"
-# KEYS[8]="kiiuruswallet"
-# KEYS[9]="kiipaganiwallet"
+KEYS[1]="public_sale"
+KEYS[2]="liquidity"
+KEYS[3]="community_development"
+KEYS[4]="team"
+KEYS[5]="rewards"
+KEYS[6]="kiiventadorwallet"
+KEYS[7]="kiiferrari458wallet"
+KEYS[8]="kiiuruswallet"
+KEYS[9]="kiipaganiwallet"
 
 ###################
 # INITIAL BALANCES
@@ -46,15 +46,15 @@ KEYS[0]="private_sale"
 # Note: this does not matter if you're joining testnet or mainnet
 ###################
 INITIAL_BALANCES[0]=54000000000000
-# INITIAL_BALANCES[1]=126000000000000
-# INITIAL_BALANCES[2]=180000000000000
-# INITIAL_BALANCES[3]=180000000000000
-# INITIAL_BALANCES[4]=356000000000000
-# INITIAL_BALANCES[5]=900000000000000
-# INITIAL_BALANCES[6]=1000000000000
-# INITIAL_BALANCES[7]=1000000000000
-# INITIAL_BALANCES[8]=1000000000000
-# INITIAL_BALANCES[9]=1000000000000
+INITIAL_BALANCES[1]=126000000000000
+INITIAL_BALANCES[2]=180000000000000
+INITIAL_BALANCES[3]=180000000000000
+INITIAL_BALANCES[4]=356000000000000
+INITIAL_BALANCES[5]=900000000000000
+INITIAL_BALANCES[6]=1000000000000
+INITIAL_BALANCES[7]=1000000000000
+INITIAL_BALANCES[8]=1000000000000
+INITIAL_BALANCES[9]=1000000000000
 
 ###################
 # SEED PHRASES
@@ -164,7 +164,6 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	jq '.app_state["mint"]["params"]["inflation_min"]="0.0"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 	jq '.app_state["mint"]["params"]["inflation_rate_change"]="0.0"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 	jq '.app_state["mint"]["params"]["mint_denom"]="tkii"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
-	jq '.app_state["staking"]["params"]["bond_denom"]="tkii"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 	jq '.app_state["evm"]["config"]["chainId"]=123454321' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"		
 	jq '.app_state["evm"]["params"]["evm_denom"]="tkii"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"	
 
@@ -185,7 +184,7 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	jq '.app_state["evm"]["alloc"]['\""$INITIAL_EVM_ACCOUNT"\"']["balance"]='\"0x$HEX_BALANCE\" "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 
 	# Sign genesis transaction
-	./build/bin/kiichaind genesis gentx ${KEYS[0]} ${INITIAL_BALANCES[0]}tkii --keyring-backend $KEYRING --chain-id $CHAINID --home "$HOMEDIR"
+	./build/bin/kiichaind genesis gentx ${KEYS[6]} ${INITIAL_BALANCES[6]}tkii --keyring-backend $KEYRING --chain-id $CHAINID --home "$HOMEDIR"
 
 	# Collect genesis tx
 	./build/bin/kiichaind genesis collect-gentxs --home "$HOMEDIR"
@@ -202,4 +201,4 @@ fi
 sed -i'' -e "s/^persistent_peers = .*/persistent_peers = \"$PEER_ADDRESSES\"/" "$CONFIG_TOML"
 
 # Start the node (remove the --pruning=nothing flag if historical queries are not needed)m
-./build/bin/kiichaind start --pruning=nothing "$TRACE" --log_level $LOGLEVEL --api.enabled-unsafe-cors --api.enable --api.swagger --minimum-gas-prices=0.0001tkii --home "$HOMEDIR"
+./build/bin/kiichaind start --pruning=nothing "$TRACE" --log_level $LOGLEVEL --api.enabled-unsafe-cors --api.enable --api.swagger --minimum-gas-prices=1tkii --home "$HOMEDIR"
