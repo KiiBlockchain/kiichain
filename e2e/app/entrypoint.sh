@@ -184,7 +184,7 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	jq '.app_state["mint"]["params"]["inflation_rate_change"]="0.0"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 	jq '.app_state["mint"]["params"]["mint_denom"]="tkii"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 	jq '.app_state["evm"]["config"]["chainId"]=123454321' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"		
-	jq '.app_state["evm"]["params"]["evm_denom"]="tekii"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"	
+	jq '.app_state["evm"]["params"]["evm_denom"]="kii"' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"	
 
 	# Allocate genesis accounts (kii formatted addresses)
 	KEY_BALANCE_INDEX=0
