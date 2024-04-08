@@ -77,7 +77,7 @@ NOTE: to get pubkey, execute the command:
 ```
 ```json
 {
-        "pubkey": <YOUR PUBKEY>,
+        "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"oLcLVnW/sNgmH/1i21XaArJmOhFgDLVoVhi9u9Ox6vo="}, //change this pubkey object with your pubkey from the command above
         "amount": "10000000000tkii",
         "moniker": "YOUR VALIDATOR NAME",
         "identity": "YOUR KEYBASE IDENTITY",
@@ -90,6 +90,12 @@ NOTE: to get pubkey, execute the command:
         "min-self-delegation": "10000000000"
 }
 ```
+
+## Import Seed into Wallet
+1) Once you have your validator seed phrase, import it into [Metamask](https://metamask.io/download/)
+2) Once you have your validator address from metamask (hex format) `0x123abc....`, contact [Kii support in dicord](https://discord.com/invite/fUcfeYYtVF) to get some KII testnet tokens. (Faucet coming soon)
+3) Once you have tokens, swap your KII tokens to sKII in the [Kii Block Explorer Dashboard - Swap Button](https://app.kiiglobal.io/kiichain/dashboard). (Choose an amount you are willing to stake to your validator, 10,000 sKII is typically a good amount.  Ensure you keep some KII for paying for gas fees for the transactions.)
+4) Once you have your sKII, proceed with executing the create validator command.
 
 ## Convert Node to Validator
    ```sh
