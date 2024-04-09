@@ -93,7 +93,7 @@ NOTE: to get pubkey, execute the command:
 
 ## Import Seed into Wallet
 1) Once you have your validator seed phrase, import it into [Metamask](https://metamask.io/download/)
-NOTE: if you have an existing installation of metamask, you will need the private key of your validator wallet instead.  On your node, execute the following command: `./build/bin/kiichaind keys export YOUR_VALIDATOR_WALLET_NAME --unarmored-hex --unsafe  --home .tmp/kiichaind --keyring-backend test` where `YOUR_VALIDATOR_WALLET_NAME` should match what was set in `KEY[0]` within the `entrypoint.sh` script.
+- NOTE: if you have an existing installation of metamask, you will need the private key of your validator wallet instead.  On your node, execute the following command: `./build/bin/kiichaind keys export YOUR_VALIDATOR_WALLET_NAME --unarmored-hex --unsafe  --home .tmp/kiichaind --keyring-backend test` where `YOUR_VALIDATOR_WALLET_NAME` should match what was set in `KEY[0]` within the `entrypoint.sh` script.
 2) Add the Kiichain Testnet to Metamask
 - visit the drop down chain menu at the top left of the metamask browser extension
 - Click add network
