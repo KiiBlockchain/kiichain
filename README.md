@@ -98,7 +98,7 @@ NOTE: to get pubkey, execute the command:
 - Click add network
 - Click Add network manually
 - Network Name = Kiichain Tesnet
-- New RPC URL = http://a.sentry.testnet.kiivalidator.com:8545
+- New RPC URL = https://a.sentry.testnet.kiivalidator.com:8645
 - Chain ID = 123454321
 - Currency Symbol = kii
 - Block Explorer = https://app.kiiglobal.io/kiichain/tx
