@@ -102,7 +102,7 @@ NOTE: to get pubkey, execute the command:
 - Chain ID = 123454321
 - Currency Symbol = kii
 - Block Explorer = https://app.kiiglobal.io/kiichain/tx
-3) Once you have your validator address from metamask (hex format) `0x123abc....`, contact [Kii support in dicord](https://discord.com/invite/fUcfeYYtVF) to get some KII testnet tokens. (Faucet coming soon)
+3) Once you have your validator address from metamask (hex format) `0x123abc....`, contact [Kii support in discord](https://discord.com/invite/fUcfeYYtVF) to get some KII testnet tokens. (Faucet coming soon)
 4) Once you have tokens, swap your KII tokens to sKII in the [Kii Block Explorer Dashboard - Swap Button](https://app.kiiglobal.io/kiichain/dashboard). (Choose an amount you are willing to stake to your validator, 10,000 sKII is typically a good amount.  Ensure you keep some KII for paying for gas fees for the transactions.)
 5) Once you have your sKII, proceed with executing the create validator command.
 
