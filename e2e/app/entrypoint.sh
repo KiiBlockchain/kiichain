@@ -29,8 +29,8 @@
 # if you're joining testnet or mainnet, you only need to set up 1 (your validator).
 # for local development, these wallets are included in the genesis file.
 ###################
-KEYS[0]="genesis"
-# KEYS[1]="public_sale"
+KEYS[0]="validator"
+# KEYS[1]="genesis_tokens"
 # KEYS[2]="liquidity"
 # KEYS[3]="community_development"
 # KEYS[4]="team"
@@ -45,8 +45,8 @@ KEYS[0]="genesis"
 # Balances that are initialized to the corresponding keys above (KEYS[0] will have a balance of INITIAL_BALANCES[0]).
 # Note: this does not matter if you're joining testnet or mainnet
 ###################
-INITIAL_BALANCES[0]=1800000000000000
-# INITIAL_BALANCES[1]=126000000000000
+INITIAL_BALANCES[0]=100000000000
+# INITIAL_BALANCES[1]=1799900000000000
 # INITIAL_BALANCES[2]=180000000000000
 # INITIAL_BALANCES[3]=180000000000000
 # INITIAL_BALANCES[4]=356000000000000
@@ -118,7 +118,7 @@ TRACE="--trace"
 # format comma separated: <node id 1>@<ip address>:26656,<node id 2>@<ip address>:26656
 # VALUES ARE CURRENTLY Kiichain's PUBLIC SENTRY NODES.  FEEL FREE TO NOT USE THEM IF YOU WOULD RATHER USE DIFFERENT PEERS.
 ###################
-PEER_ADDRESSES="cb2677608cda256fa6b4f7b2417ebc2ea87a33a7@172.31.4.207:26656,3fb48636d7087362430cb2b2981b5dd087b14af3@172.31.1.108:26656,02fb2c80f374667519123a8e0bcc85fbf916f755@172.31.14.183:26656"
+PEER_ADDRESSES="dd9c8ac5979f6ec78335f47f082904b64d88e435@172.31.4.207:26656,f50b68ebd79787b22ad39a674e28b16ab834b172@172.31.1.108:26656,558367e832c6c347b6ea91903255f00379fc43a9@172.31.14.183:26656"
 
 ###################
 # FILE PATHS
