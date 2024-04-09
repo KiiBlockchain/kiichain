@@ -1,7 +1,7 @@
 {
   "app_name": "kiichaind",
-  "app_version": "b2f2622",
-  "genesis_time": "2024-04-09T03:38:58.007510607Z",
+  "app_version": "71882bc",
+  "genesis_time": "2024-04-09T04:16:56.577392757Z",
   "chain_id": "kiichain-1",
   "initial_height": 1,
   "app_hash": null,
@@ -29,7 +29,7 @@
     "consensus": null,
     "crisis": {
       "constant_fee": {
-        "denom": "stake",
+        "denom": "tkii",
         "amount": "1000"
       }
     },
@@ -56,7 +56,9 @@
       "evidence": []
     },
     "evm": {
-      "config": null,
+      "config": {
+        "chainId": 123454321
+      },
       "nonce": "0x0",
       "timestamp": "0x0",
       "extraData": "0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
@@ -74,7 +76,10 @@
       "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
       "baseFeePerGas": null,
       "excessBlobGas": null,
-      "blobGasUsed": null
+      "blobGasUsed": null,
+      "params": {
+        "evm_denom": "kii"
+      }
     },
     "genutil": {
       "gen_txs": []
@@ -119,14 +124,14 @@
     },
     "mint": {
       "minter": {
-        "inflation": "0.130000000000000000",
+        "inflation": "0.0",
         "annual_provisions": "0.000000000000000000"
       },
       "params": {
-        "mint_denom": "stake",
-        "inflation_rate_change": "0.130000000000000000",
-        "inflation_max": "0.200000000000000000",
-        "inflation_min": "0.070000000000000000",
+        "mint_denom": "tkii",
+        "inflation_rate_change": "0.0",
+        "inflation_max": "0.0",
+        "inflation_min": "0.0",
         "goal_bonded": "0.670000000000000000",
         "blocks_per_year": "6311520"
       }
@@ -149,7 +154,7 @@
         "max_validators": 100,
         "max_entries": 7,
         "historical_entries": 10000,
-        "bond_denom": "stake",
+        "bond_denom": "tkii",
         "min_commission_rate": "0.000000000000000000"
       },
       "last_total_power": "0",
