@@ -29,8 +29,8 @@
 # if you're joining testnet or mainnet, you only need to set up 1 (your validator).
 # for local development, these wallets are included in the genesis file.
 ###################
-KEYS[0]="genesis"
-# KEYS[1]="public_sale"
+KEYS[0]="validator"
+KEYS[1]="genesis_tokens"
 # KEYS[2]="liquidity"
 # KEYS[3]="community_development"
 # KEYS[4]="team"
@@ -45,8 +45,8 @@ KEYS[0]="genesis"
 # Balances that are initialized to the corresponding keys above (KEYS[0] will have a balance of INITIAL_BALANCES[0]).
 # Note: this does not matter if you're joining testnet or mainnet
 ###################
-INITIAL_BALANCES[0]=1800000000000000
-# INITIAL_BALANCES[1]=126000000000000
+INITIAL_BALANCES[0]=100000000000
+INITIAL_BALANCES[1]=1799900000000000
 # INITIAL_BALANCES[2]=180000000000000
 # INITIAL_BALANCES[3]=180000000000000
 # INITIAL_BALANCES[4]=356000000000000
