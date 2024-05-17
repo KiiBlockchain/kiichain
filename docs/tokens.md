@@ -1,0 +1,8 @@
+
+# Kiichain Native Tokens
+
+Kiichain introduces a dual-native token system comprising sKII and KII, each serving distinct roles within the ecosystem. sKII functions as an internal placeholder token, primarily designated for staking purposes and slated for future governance utilization. However, unlike its counterpart KII, sKII is not transferrable, necessitating a conversion process to KII before users can engage in transactions or interactions within the Kiichain network. This structural design ensures the integrity of staking mechanisms while laying the groundwork for robust governance frameworks in the future.
+
+On the other hand, KII serves as the primary utility token within the Kiichain ecosystem, facilitating transactions and powering network operations, notably through the payment of gas fees. Distinguished by its fungibility and interoperability, KII can be seamlessly transferred and utilized across various wallet providers, including popular options like MetaMask and WalletConnect. By leveraging KII, users can engage in a diverse array of interactions within the Kiichain network, ranging from simple transactions to more complex smart contract executions, thereby driving the adoption and utility of the native token within the broader blockchain landscape.
+
+In order to determine the balance of sKII, you will need to interact with one of the precompiled smart contracts deployed on Kiichain.  To determine the KII balance of an address, it would be the same process as determining the native token balance (e.g. ETH on ethereum) on an EVM chain.
